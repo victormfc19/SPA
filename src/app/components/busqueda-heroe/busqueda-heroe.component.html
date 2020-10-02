@@ -1,0 +1,54 @@
+<h1 *ngIf = "noexiste == false">Buscando: {{heroe.nombre}} </h1>
+
+    <hr>
+    <br>
+
+    <div class="row" *ngIf = "noexiste == true">
+
+
+        <div class="col-md-12">
+
+            <div class="alert alert-primary" role="alert">
+                No se encontró el heroe
+            </div>
+
+        </div>
+
+    </div>
+    
+    
+    <div class="row heroeInfo" *ngIf = "noexiste == false">
+    
+            <div class="col-md-4">  
+                <img [src] = "heroe.img" class="img-fluid">
+    
+                <a href="heroes" [routerLink] = "['/heroes']" class="btnRegresar btn btn-outline-danger btn-block">Regresar..</a>
+            </div>
+            <br><br>
+            
+            <div class="col-md-8">
+
+            
+    
+            <h3> {{ heroe.nombre }} </h3>
+    
+            <hr>
+    
+            <p>  
+                {{ heroe.bio }}
+            </p>
+    
+            <div class="container" *ngIf = "heroe.casa == 'Marvel'">        
+                <img src = "../../../assets/img/marvel.jpg">
+            </div>
+    
+            <div class="container" *ngIf = "heroe.casa == 'DC'" >        
+                <img src = "../../../assets/img/DC.png" style="width:120x; height:120px;" >
+            </div>
+    
+            </div>
+    
+            <br>
+            
+             
+    </div>
